@@ -1,0 +1,80 @@
+$bg-color: #EFEFEF;
+$circle-bg: #FAC53C;
+$circle-border: #FFDD75;
+$font: monospace;
+
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+body {
+  background-color: $bg-color;
+  font-family: $font;
+}
+
+// menu grid
+.product-menu {
+  @include flex-center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 250px));
+  margin: 100px auto;
+  width: 90%;
+
+  @media (max-width: 800px) {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 150px));
+    gap: 70px;
+  }
+
+  @media (max-width: 400px) {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 130px));
+    gap: 50px;
+
+  }
+
+  @media (min-width: 1000px) {
+    width: 70%;
+  }
+}
+
+// product image & text grouo 
+.product-card {
+  @include flex-center;
+  flex-direction: column;
+
+  p {
+    max-width: 140px;
+    min-height: 100px;
+    max-height: 100px;
+    text-align: center;
+    font-size: 12pt;
+  }
+}
+
+// product image
+.product-img {
+  @include flex-center;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background-color: $circle-bg;
+  border: 10px solid $circle-border;
+  margin-bottom: 10px;
+
+  img {
+    width: 85%;
+  }
+
+  @media (max-width: 800px) {
+    width: 150px;
+    height: 150px;
+  }
+
+    @media (max-width: 400px) {
+    width: 120px;
+    height: 120px;
+  }
+}
