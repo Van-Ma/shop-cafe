@@ -1,0 +1,76 @@
+$primary-color: #4D4265;
+$secondary-color: #CDC6DB;
+$circle-bg: #FAC53C;
+$circle-border: #FFDD75;
+
+@mixin flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header{
+    display: flex;
+    position: fixed;
+    box-sizing: border-box;
+    padding: 10px 25px;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 1000;
+    background-color: $primary-color;
+    img{
+        width: 30px;
+    }
+}
+
+// navigation bar container
+.navbar {
+    @include flex-center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    background-color: $primary-color;
+    z-index: 1000;
+    @media (min-width: 600px){
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+}
+
+// navigation buttons
+.nav-btn {
+    width: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #ffffff;
+    transition: transform 0.2s ease, color 0.2s ease;
+
+    .icon {
+        font-size: 25px;
+    }
+
+    &:hover {
+        color: $circle-border;
+        transform: scale(1.1);
+    }
+    .icon-img{
+        width: 25px;
+    }
+
+}
+
+.icon-wrapper{
+    @include flex-center;
+    flex-direction: column;
+    font-size: 8pt;
+    font-family: monospace;
+    gap: 5px;
+}
